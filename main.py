@@ -2,6 +2,7 @@ import discord
 import requests
 import json
 import time
+import os
 
 client = discord.Client()
 string1 = 'https://finnhub.io/api/v1/search?q='
@@ -137,5 +138,5 @@ async def on_message(stock):
                 typed = 0
         except ValueError:
             await stock.channel.send("```Invalid, please try again!```")
-client.run('ODAzMzYzMzEyNDIyMzU0OTk0.YA8sYw.EkR2WJr0IPLV65H-Ncfo1RTXWME')
+client.run(os.environ['TOKEN'])
 
